@@ -82,9 +82,6 @@ socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
 bootstrap = Bootstrap(app)
 
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
-
 @app.route('/')
 def index():
     return render_template('index.html')
