@@ -43,6 +43,7 @@
           <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
               var socket = io.connect(window.location.href);
+              console.log(window.location.href);
               var topic = 'greenhouse/dht-11';
               var qos = 0;
               var data = '{"topic": "' + topic + '", "qos": ' + qos + '}';
