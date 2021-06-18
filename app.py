@@ -47,7 +47,6 @@ A small Test application to show how to use Flask-MQTT.
 
 """
 import logging
-
 import eventlet
 import json
 from flask import Flask, render_template
@@ -83,6 +82,8 @@ socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
 bootstrap = Bootstrap(app)
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def index():
